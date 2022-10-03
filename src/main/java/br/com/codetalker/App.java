@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import br.com.codetalker.drivers.Drivers;
 
-
-
 public class App {
 
     public static void main(String[] args) throws Exception {
