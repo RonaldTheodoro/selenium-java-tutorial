@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import br.com.codetalker.settings.Settings;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Drivers {
     Settings settings = new Settings();
@@ -24,7 +25,7 @@ public class Drivers {
     }
 
     private WebDriver getChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", settings.chromedriver());
+        WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
         options.setBinary(this.settings.chromeBrowserPath());
@@ -32,7 +33,7 @@ public class Drivers {
     }
 
     private WebDriver getFirefoxDriver() {
-        System.setProperty("webdriver.gecko.driver", settings.geckodriver());
+        WebDriverManager.firefoxdriver().setup();
 
         FirefoxOptions options = new FirefoxOptions();
         FirefoxBinary binary = new FirefoxBinary(

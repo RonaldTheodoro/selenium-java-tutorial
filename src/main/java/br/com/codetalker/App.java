@@ -9,9 +9,11 @@ public class App {
     public static void main(String[] args) throws Exception {
         Drivers drivers = new Drivers();
 
-        WebDriver driver = drivers.getDriver("firefox");
+        WebDriver driver = drivers.getDriver("chrome");
 
         driver.get("https://www.google.com");
+
+        driver.manage().window().maximize();
 
         driver.quit();
     }
